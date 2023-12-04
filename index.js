@@ -10,7 +10,7 @@ const API_URL = 'https://fsa-crud-2aa9294fe819.herokuapp.com/api/2310-GHP-ET-WEB
 // Function to delete a party
 async function deleteParty(id) {
     try {
-        await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+        await fetch(API_URL, {
         method: 'DELETE',
         });
 
@@ -20,7 +20,7 @@ async function deleteParty(id) {
         // Render the updated list
         renderParties();
     }   catch (error) {
-        console.error('Error deleting party:', error);
+        console.error(error);
         }
 }
 
@@ -74,7 +74,7 @@ async function addParty() {
         const body = document.getElementById('body').value;
 
         // Perform a POST request to add a new party
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+        const response = await fetch(API_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -94,7 +94,7 @@ async function addParty() {
         // Render the updated list of parties
         renderParties();
     }   catch (error) {
-        console.error('Error adding party:', error);
+        console.error(error);
         }
 }
 
