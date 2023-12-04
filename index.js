@@ -38,7 +38,6 @@ function renderParties() {
         partyList.appendChild(li);
     });
 }
-
 // Function to fetch parties from the server
     const fetchAllParties = async () => {
         try {
